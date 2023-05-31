@@ -1,0 +1,141 @@
+body {
+    font-family: Noto sans, sans-serif;
+    background-color: #1e1e2f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form-container {
+    background-color: #34495e82;
+    /* add blur */
+    backdrop-filter: blur(500px);
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    text-align: center;
+
+    /* neon shadow  */
+    box-shadow: 0 0 5px #6E9BC5,
+                0 0 10px #6E9BC5,
+                0 0 20px #6E9BC5,
+                0 0 20px #6E9BC5,
+                0 0 30px #6E9BC5,
+                0 0 50px #6E9BC5,
+                0 0 75px #6E9BC5,
+                0 0 100px #6E9BC5;
+    border : 1.5px solid #e6f3ff;
+}
+
+.form-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-field {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-right: 10px;
+
+}
+
+.form-label {
+    color: #ffffff;
+    margin-right: 10px;
+}
+
+.form-input {
+    width: 60px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.form-input::placeholder {
+    color: #a9a9c6;
+}
+
+.form-button {
+    padding: 10px 20px;
+    background-color: #34495e82;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 auto;
+    border: 1.5px solid #e6f3ff;
+    transition: all 0.3s ease-in-out;
+}
+
+/* glow on hover */
+.form-button:hover {
+    box-shadow: 0px 0px 20px 1px #ffffff5b;
+    /* change background color */
+    background-color: #e6f3ff;
+    color: #000000;
+}
+
+.result {
+    font-size: 18px;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    margin-bottom: 30px
+}
+
+.form-table td {
+    padding: 10px;
+}
+
+.form-table input {
+    background-color: #34495e00;
+    border: 2px solid #e6f3ff;
+    color: #ffffff;
+}
+
+.form-table input::-webkit-inner-spin-button, 
+.form-table input::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.text-align-end {
+    text-align: end;
+}
+
+
+body {
+	background: linear-gradient(-45deg, #000000, #000000, #12303a, #000000);
+	background-size: 400% 400%;
+	animation: gradient 5s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

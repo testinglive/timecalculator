@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calculation Form</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script>
+        function calculate() {
+            var completedHrs = parseInt(document.getElementById("inputCompletedHrs").value) || 0;
+            var completedMins = parseInt(document.getElementById("inputCompletedMins").value) || 0;
+            var lastInHrs = parseInt(document.getElementById("inputLastInHrs").value) || 0;
+            var lastInMins = parseInt(document.getElementById("inputLastInMins").value) || 0;
+
+            var cHrs = 8 - completedHrs;
+            var cMins = 0 - completedMins;
+
+            var dHrs = cHrs + lastInHrs;
+            var dMins = cMins + lastInMins;
+
+            if (dMins < 0) {
+                dHrs--;
+                dMins += 60;
+            }
+
+            document.getElementById("outputGoAt").textContent = "You can go at " + dHrs + " hrs " + dMins + " mins";
+        }
+
+        function handleKeyPress(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault(); // Prevent form submission on Enter press
+                calculate(); // Call the calculate function
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="form-container">
+        <div class="form-title">Calculation Form</div>
+        <hr>
+        <table class="form-table">
+            <tr>
+                <td>
+                    <span class="form-label text-align-end">
+                        Completed Time:
+                    </span>
+                </td>
+                <td>
+                    <input type="number" id="inputCompletedHrs" name="CompletedHrs" placeholder="HH" class="form-input"
+                        required>
+                </td>
+                <td>
+                    <input type="number" id="inputCompletedMins" name="CompletedMins" placeholder="MM"
+                        class="form-input" required>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-label text-align-end">Last In Time:</div>
+
+                </td>
+                <td>
+                    <input type="number" id="inputLastInHrs" name="LastInHrs" placeholder="HH" class="form-input"
+                        required>
+
+                </td>
+                <td>
+
+                    <input type="number" id="inputLastInMins" name="LastInMins" placeholder="MM" class="form-input"
+                        required>
+                </td>
+            </tr>
+        </table>
+        <input type="button" value="Calculate" onclick="calculate()" class="form-button">
+        <div class="result" id="outputGoAt"></div>
+    </div>
+
+    <script>
+        // Add event listener to the form for handling Enter key press
+        document.getElementById("inputLastInMins").addEventListener("keypress", handleKeyPress);
+    </script>
+</body>
+
+</html>
